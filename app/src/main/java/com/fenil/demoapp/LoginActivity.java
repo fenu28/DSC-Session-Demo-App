@@ -19,6 +19,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
         username = findViewById(R.id.username);
         password = findViewById(R.id.password);
         login = findViewById(R.id.login);
@@ -26,8 +27,10 @@ public class LoginActivity extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 String inputUsername = username.getText().toString();
                 String inputPassword = password.getText().toString();
+
                 if(inputUsername.isEmpty() || inputPassword.isEmpty())
                 {
                     Toast.makeText(LoginActivity.this,"Please fill all the values",Toast.LENGTH_SHORT).show();
