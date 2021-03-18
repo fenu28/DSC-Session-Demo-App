@@ -5,64 +5,98 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    android:gravity="center"
+    tools:context=".MainActivity"
+    android:background="#FFF6CF">
+
     <RelativeLayout
         android:id="@+id/relative_layout_1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:layout_margin="16dp">
         <Button
             android:id="@+id/instagram"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:text="Open Instagram">
         </Button>
         <Button
             android:id="@+id/youtube"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
+            android:layout_toRightOf="@+id/instagram"
+            android:layout_margin="8dp"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:text="Open Youtube">
         </Button>
     </RelativeLayout>
+
     <RelativeLayout
         android:id="@+id/relative_layout_2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp">
+        android:gravity="center"
+        android:layout_marginHorizontal="16dp">
         <Button
             android:id="@+id/whatsapp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Open Whatsapp">
+            android:text="Open Whatsapp"
+            android:layout_margin="8dp">
         </Button>
         <Button
             android:id="@+id/twitter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:text="Open Twitter">
+            android:layout_toRightOf="@+id/whatsapp"
+            android:text="Open Twitter"
+            android:layout_margin="8dp">
         </Button>
     </RelativeLayout>
-    <RelativeLayout
-        android:id="@+id/relative_layout_3"
+
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp">
-        <EditText
-            android:id="@+id/phone_number"
-            android:layout_width="wrap_content"
+        android:layout_margin="24dp"
+        app:cardCornerRadius="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Enter a number to dial"
-            android:inputType="phone">
-        </EditText>
-        <Button
-            android:id="@+id/call"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:text="Call">
-        </Button>
-    </RelativeLayout>
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter a number to dial"
+                android:layout_margin="8dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/phone_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:inputType="phone"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/call"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_gravity="center"
+                android:text="Call">
+            </Button>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
 
 </LinearLayout>

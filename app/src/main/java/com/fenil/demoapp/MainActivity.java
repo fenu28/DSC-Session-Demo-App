@@ -113,7 +113,8 @@ public class MainActivity extends AppCompatActivity {
                 number = phoneNumber.getText().toString();
                 if(number.isEmpty())
                 {
-                    Toast.makeText(MainActivity.this,"Please enter phone number",Toast.LENGTH_SHORT).show();
+                    phoneNumber.setError("Please enter phone number");
+                    phoneNumber.requestFocus();
                 }
                 else
                 {
